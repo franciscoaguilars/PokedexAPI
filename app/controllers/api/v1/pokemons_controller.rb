@@ -6,5 +6,6 @@ class Api::V1::PokemonsController < ApplicationController
   end
 
   def show
+    render json: Pokemon.fetch_pokemon(params[:id])
   end
 end
