@@ -26,7 +26,11 @@ class Pokemon < ApplicationRecord
   def self.fetch_pokemon(id)
     url = "https://pokeapi.co/api/v2/pokemon/#{id}"
     pokemon = RestClient.get(url)
-    JSON.parse(pokemon)
+    if pokemon.nil?
+      return nil
+    else
+      JSON.parse(pokemon)
+    end
   end
 
 end
