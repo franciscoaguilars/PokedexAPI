@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'api/v1/pokemons#index'
+
   namespace :api do
     namespace :v1 do
       resources :pokemons, only: [:index, :show]
