@@ -5,11 +5,7 @@ class Pokemon < ApplicationRecord
   # 898 Pokemons till date.
 
   def self.get_10_random
-    random_pokemon_arr = (1..898).to_a
-    pokemons_ids = []
-
-    10.times { pokemons_ids << random_pokemon_arr.sample }
-    pokemons_ids
+    (1..898).to_a.sample(10)
   end
 
   def self.fetch_pokemons
